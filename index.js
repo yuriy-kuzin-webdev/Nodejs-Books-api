@@ -7,6 +7,7 @@ const environments = require("./environments");
 const error = require("./middleware/error");
 const winston = require("winston");
 const userRoutes = require("./routes/user-routes");
+const authRoutes = require("./routes/auth-routes");
 const app = express();
 
 require("./startup/config")();
@@ -19,6 +20,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/api", userRoutes.routes);
+app.use("/api", authRoutes.routes);
 app.use(error);
 
 app.listen(environments.port, () => {
