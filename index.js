@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/api', userRoutes.routes)
+app.use('/api', userRoutes.routesgit)
 app.use(error)
 
 app.listen(environments.port, () => {
